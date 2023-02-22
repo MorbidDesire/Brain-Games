@@ -1,36 +1,16 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
+import { isEvenNumber, getRandomNumber } from '../customs.js';
+import customGame from '../index.js';
 
-console.log('Welcome to the Brain Games!');
-const userName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${userName}!`);
-const evengame = () => {
-  console.log("Answer 'yes' if the number is even, otherwise answer 'no'");
-  const firstNumber = Math.floor(Math.random() * 100);
-  const secondNumber = Math.floor(Math.random() * 100);
-  const thirdNumber = Math.floor(Math.random() * 100);
-  const tries = [firstNumber, secondNumber, thirdNumber];
+const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-  for (let i = 0; i < tries.length; i += 1) {
-    console.log(`Question: ${tries[i]}`);
-    const answer = readlineSync.question('Your answer: ');
+const QuestionAndAnswer = () => {
+  const question = getRandomNumber(100);
+  const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
 
-    const evenNumber = tries[i] % 2 === 0;
-    const oddNumber = tries[i] % 2 !== 0;
-    if ((answer === 'yes' && evenNumber) || (answer === 'no' && oddNumber)) {
-      console.log('Correct!');
-    } else if (evenNumber) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'`);
-      console.log(`Let's try again, ${userName}`);
-      break;
-    }
-    if (i === tries.length - 1) {
-      console.log(`Congratulations, ${userName}!`);
-    }
-  }
+  return [question, correctAnswer];
 };
-export default evengame;
+
+export default () => {
+  customGame(description, QuestionAndAnswer);
+};
