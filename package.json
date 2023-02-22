@@ -23,6 +23,7 @@
     "readline-sync": "^1.4.10"
   },
   "bin": {
+    "brain-gcd": "bin/brain-gcd.js",
     "brain-calc": "bin/brain-calc.js",
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js"
