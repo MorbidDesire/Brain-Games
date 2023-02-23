@@ -34,3 +34,11 @@ export const getCommonDividers = (firstNumber, secondNumber) => {
   }
   return commondividers[commondividers.length - 1];
 };
+
+export const getRandomArray = (firstNumber, step, length) => {
+  const Array = [firstNumber];
+  for (let i = 0; i < length - 1; i += 1) {
+    Array.push(Array[i] + step);
+  }
+  return Array;
+};
