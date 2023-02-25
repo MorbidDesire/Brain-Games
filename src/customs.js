@@ -42,3 +42,13 @@ export const getRandomArray = (firstNumber, step, length) => {
   }
   return Array;
 };
+
+export const getDividers = (number) => {
+  const dividers = [];
+  for (let i = 1; i <= number; i += 1) {
+    if (number % i === 0) {
+      dividers.push(i);
+    }
+  }
+  return dividers;
+};
