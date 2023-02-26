@@ -5,34 +5,22 @@ export const isEvenNumber = (anyNumber) => {
   return false;
 };
 
-export const getRandomNumber = (max) => Math.floor(Math.random() * max);
+export const getRandomNumber = (max) => Math.ceil(Math.random() * max);
 
 // eslint-disable-next-line max-len
 export const getRandomOperator = (operations) => operations[Math.floor(Math.random() * operations.length)];
 
-export const getCommonDividers = (firstNumber, secondNumber) => {
-  const firstdividers = [];
-  const seconddividers = [];
-  const commondividers = [];
-  for (let i = 1; i <= firstNumber; i += 1) {
-    if (firstNumber % i === 0) {
-      firstdividers.push(i);
-    }
-  }
-  for (let i = 1; i <= secondNumber; i += 1) {
-    if (secondNumber % i === 0) {
-      seconddividers.push(i);
-    }
-  }
-  for (let a = 0; a < firstdividers.length; a += 1) {
-    for (let b = 0; b < seconddividers.length; b += 1) {
-      if (firstdividers[a] === seconddividers[b]) {
-        commondividers.push(seconddividers[b]);
+export const getCommonNumbers = (firstArray, secondArray) => {
+  const commonNumbers = [];
+  for (let a = 0; a < firstArray.length; a += 1) {
+    for (let b = 0; b < secondArray.length; b += 1) {
+      if (firstArray[a] === secondArray[b]) {
+        commonNumbers.push(secondArray[b]);
         break;
       }
     }
   }
-  return commondividers[commondividers.length - 1];
+  return commonNumbers;
 };
 
 export const getRandomArray = (firstNumber, step, length) => {

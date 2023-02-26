@@ -5,7 +5,7 @@ import { getDividers, getRandomNumber } from '../customs.js';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const QuestionAndAnswer = () => {
-  const question = getRandomNumber(10) + 1;
+  const question = getRandomNumber(15);
   const dividers = getDividers(question);
   const firstDivider = dividers[0];
   const secondDivider = dividers[1];
