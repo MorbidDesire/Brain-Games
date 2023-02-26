@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import customGame from '../index.js';
-import { getRandomNumber, getRandomArray } from '../customs.js';
+import { getRandomNumber, getRandomArray, getRandomElement } from '../customs.js';
 
 const description = 'What number is missing in the progression?';
 
 const QuestionAndAnswer = () => {
   const randomArray = getRandomArray(getRandomNumber(10), getRandomNumber(5), 10);
-  const randomNumber = randomArray[getRandomNumber(randomArray.length)];
+  const randomNumber = randomArray[getRandomElement(randomArray.length)];
   const questionArray = [];
   for (let i = 0; i < randomArray.length; i += 1) {
     if (randomArray[i] === randomNumber) {

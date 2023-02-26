@@ -7,8 +7,12 @@ export const isEvenNumber = (anyNumber) => {
 
 export const getRandomNumber = (max) => Math.ceil(Math.random() * max);
 
-// eslint-disable-next-line max-len
-export const getRandomOperator = (operations) => operations[Math.floor(Math.random() * operations.length)];
+export const getRandomElement = (max) => Math.floor(Math.random() * max);
+
+export const getRandomOperator = (operations) => {
+  const randomOperator = operations[Math.floor(Math.random() * operations.length)];
+  return randomOperator;
+};
 
 export const getCommonNumbers = (firstArray, secondArray) => {
   const commonNumbers = [];
