@@ -1,18 +1,8 @@
 #!/usr/bin/env node
 import customGame from '../index.js';
-import getRandomNumber from '../customs.js';
+import { getRandomNumber, getRandomArray, getRandomElement } from '../customs.js';
 
 const description = 'What number is missing in the progression?';
-
-const getRandomElement = (max) => Math.floor(Math.random() * max);
-
-const getRandomArray = (firstNumber, step, length) => {
-  const array = [firstNumber];
-  for (let i = 0; i < length - 1; i += 1) {
-    array.push(array[i] + step);
-  }
-  return array;
-};
 
 const questionAndAnswer = () => {
   const randomArray = getRandomArray(getRandomNumber(10), getRandomNumber(5), 10);
