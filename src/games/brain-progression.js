@@ -4,7 +4,7 @@ import { getRandomNumber, getRandomArray, getRandomElement } from '../customs.js
 
 const description = 'What number is missing in the progression?';
 
-const QuestionAndAnswer = () => {
+const questionAndAnswer = () => {
   const randomArray = getRandomArray(getRandomNumber(10), getRandomNumber(5), 10);
   const randomNumber = randomArray[getRandomElement(randomArray.length)];
   const questionArray = [];
@@ -20,5 +20,5 @@ const QuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 export default () => {
-  customGame(description, QuestionAndAnswer);
+  customGame(description, questionAndAnswer);
 };

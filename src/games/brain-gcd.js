@@ -5,7 +5,7 @@ import customGame from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const QuestionAndAnswer = () => {
+const questionAndAnswer = () => {
   const pair = cons(getRandomNumber(20), getRandomNumber(20));
   const question = `${car(pair)} ${cdr(pair)}`;
   const firstDividers = getDividers(car(pair));
@@ -17,5 +17,5 @@ const QuestionAndAnswer = () => {
 };
 
 export default () => {
-  customGame(description, QuestionAndAnswer);
+  customGame(description, questionAndAnswer);
 };

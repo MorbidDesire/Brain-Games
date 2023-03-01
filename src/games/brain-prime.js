@@ -4,7 +4,7 @@ import { getDividers, getRandomNumber } from '../customs.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const QuestionAndAnswer = () => {
+const questionAndAnswer = () => {
   const question = getRandomNumber(15);
   const dividers = getDividers(question);
   const firstDivider = dividers[0];
@@ -14,5 +14,5 @@ const QuestionAndAnswer = () => {
 };
 
 export default () => {
-  customGame(description, QuestionAndAnswer);
+  customGame(description, questionAndAnswer);
 };
