@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { getRandomNumber } from '../customs.js';
 import customGame from '../index.js';
+import getRandomNumber from '../customs.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 
