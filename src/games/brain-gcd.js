@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { cons, car, cdr } from '@hexlet/pairs';
-import { getRandomNumber } from '../customs.js';
+import getRandomNumber from '../customs.js';
 import customGame from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
