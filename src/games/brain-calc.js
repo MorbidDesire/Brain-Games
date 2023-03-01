@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 import { cons, car, cdr } from '@hexlet/pairs';
 import customGame from '../index.js';
-import { getRandomNumber, getRandomOperator } from '../customs.js';
+import { getRandomNumber } from '../customs.js';
 
 const description = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
+
+const getRandomOperator = (defOperations) => {
+  const randomOperator = defOperations[Math.floor(Math.random() * defOperations.length)];
+  return randomOperator;
+};
 
 const questionAndAnswer = () => {
   const randomOperator = getRandomOperator(operations);
