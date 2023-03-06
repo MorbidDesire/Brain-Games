@@ -4,22 +4,20 @@ import getRandomNumber from '../customs.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getDividers = (number) => {
-  const dividers = [];
-  for (let i = 1; i <= number; i += 1) {
-    if (number % i === 0) {
-      dividers.push(i);
+const isPrimeNumber = (num) => {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      return false;
+    } if (num < 2) {
+      return false;
     }
   }
-  return dividers;
+  return true;
 };
 
 const getQuestionAndAnswer = () => {
-  const question = getRandomNumber(15);
-  const dividers = getDividers(question);
-  const firstDivider = dividers[0];
-  const secondDivider = dividers[1];
-  const correctAnswer = (firstDivider === 1 && secondDivider === question) ? 'yes' : 'no';
+  const question = getRandomNumber(35);
+  const correctAnswer = isPrimeNumber(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
