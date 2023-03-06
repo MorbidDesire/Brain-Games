@@ -28,7 +28,7 @@ const getCommonNumbers = (firstArray, secondArray) => {
   return commonNumbers;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const pair = cons(getRandomNumber(20), getRandomNumber(20));
   const question = `${car(pair)} ${cdr(pair)}`;
   const firstDividers = getDividers(car(pair));
@@ -40,5 +40,5 @@ const questionAndAnswer = () => {
 };
 
 export default () => {
-  customGame(description, questionAndAnswer);
+  customGame(description, getQuestionAndAnswer);
 };

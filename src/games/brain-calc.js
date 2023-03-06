@@ -29,7 +29,7 @@ const calculate = (userOperator, firstNumber, secondNumber) => {
   return answer;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const randomOperator = getRandomOperator(operations);
   const pair = cons(getRandomNumber(10), getRandomNumber(10));
   const question = `${car(pair)} ${randomOperator} ${cdr(pair)}`;
@@ -39,5 +39,5 @@ const questionAndAnswer = () => {
 };
 
 export default () => {
-  customGame(description, questionAndAnswer);
+  customGame(description, getQuestionAndAnswer);
 };

@@ -14,7 +14,7 @@ const getRandomArray = (firstNumber, step, length) => {
   return Array;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const randomArray = getRandomArray(getRandomNumber(10), getRandomNumber(5), 10);
   const randomNumber = randomArray[getRandomElement(randomArray.length)];
   const questionArray = [];
@@ -30,5 +30,5 @@ const questionAndAnswer = () => {
   return [question, correctAnswer];
 };
 export default () => {
-  customGame(description, questionAndAnswer);
+  customGame(description, getQuestionAndAnswer);
 };

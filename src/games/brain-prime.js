@@ -14,7 +14,7 @@ const getDividers = (number) => {
   return dividers;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const question = getRandomNumber(15);
   const dividers = getDividers(question);
   const firstDivider = dividers[0];
@@ -24,5 +24,5 @@ const questionAndAnswer = () => {
 };
 
 export default () => {
-  customGame(description, questionAndAnswer);
+  customGame(description, getQuestionAndAnswer);
 };

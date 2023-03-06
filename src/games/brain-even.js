@@ -11,7 +11,7 @@ const isEvenNumber = (anyNumber) => {
   return false;
 };
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const question = getRandomNumber(100);
   const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
 
@@ -19,5 +19,5 @@ const questionAndAnswer = () => {
 };
 
 export default () => {
-  customGame(description, questionAndAnswer);
+  customGame(description, getQuestionAndAnswer);
 };
