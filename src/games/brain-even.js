@@ -12,7 +12,7 @@ const isEvenNumber = (anyNumber) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const question = getRandomNumber(100);
+  const question = getRandomNumber(0, 100);
   const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
 
   return [question, correctAnswer];

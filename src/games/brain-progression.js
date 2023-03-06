@@ -4,29 +4,22 @@ import getRandomNumber from '../customs.js';
 
 const description = 'What number is missing in the progression?';
 
-const getRandomElement = (max) => Math.floor(Math.random() * max);
-
-const getRandomArray = (firstNumber, step, length) => {
-  const Array = [firstNumber];
-  for (let i = 0; i < length - 1; i += 1) {
-    Array.push(Array[i] + step);
-  }
-  return Array;
+const getProgression = (startNum, step) => {
+  const progression = [];
+  const progressionLength = 10;
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(startNum + step * i);
+  } return progression;
 };
 
 const getQuestionAndAnswer = () => {
-  const randomArray = getRandomArray(getRandomNumber(10), getRandomNumber(5), 10);
-  const randomNumber = randomArray[getRandomElement(randomArray.length)];
-  const questionArray = [];
-  for (let i = 0; i < randomArray.length; i += 1) {
-    if (randomArray[i] === randomNumber) {
-      questionArray.push('..');
-    } else {
-      questionArray.push(randomArray[i]);
-    }
-  }
-  const question = `${questionArray.join(' ')}`;
-  const correctAnswer = String(randomNumber);
+  const firstNumber = getRandomNumber(0, 50);
+  const step = getRandomNumber(2, 8);
+  const progression = getProgression(firstNumber, step);
+  const randomIndex = getRandomNumber(0, 9);
+  const correctAnswer = String(progression[randomIndex]);
+  progression[randomIndex] = '..';
+  const question = progression.join(' ');
   return [question, correctAnswer];
 };
 export default () => {

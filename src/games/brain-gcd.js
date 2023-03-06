@@ -15,7 +15,7 @@ const getGcd = (x, y) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const pair = cons(getRandomNumber(20), getRandomNumber(20));
+  const pair = cons(getRandomNumber(1, 20), getRandomNumber(1, 20));
   const question = `${car(pair)} ${cdr(pair)}`;
   const correctAnswer = String(getGcd(car(pair), cdr(pair)));
   return [question, correctAnswer];

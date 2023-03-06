@@ -31,7 +31,7 @@ const calculate = (userOperator, firstNumber, secondNumber) => {
 
 const getQuestionAndAnswer = () => {
   const randomOperator = getRandomOperator(operations);
-  const pair = cons(getRandomNumber(10), getRandomNumber(10));
+  const pair = cons(getRandomNumber(0, 10), getRandomNumber(0, 10));
   const question = `${car(pair)} ${randomOperator} ${cdr(pair)}`;
 
   const correctAnswer = calculate(randomOperator, car(pair), cdr(pair));

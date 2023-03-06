@@ -16,7 +16,7 @@ const isPrimeNumber = (num) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const question = getRandomNumber(35);
+  const question = getRandomNumber(0, 35);
   const correctAnswer = isPrimeNumber(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
