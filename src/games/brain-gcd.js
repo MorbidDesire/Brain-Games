@@ -5,37 +5,16 @@ import customGame from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getDividers = (number) => {
-  const dividers = [];
-  for (let i = 1; i <= number; i += 1) {
-    if (number % i === 0) {
-      dividers.push(i);
-    }
-  }
-  return dividers;
-};
-
-const getCommonNumbers = (firstArray, secondArray) => {
-  const commonNumbers = [];
-  for (let a = 0; a < firstArray.length; a += 1) {
-    for (let b = 0; b < secondArray.length; b += 1) {
-      if (firstArray[a] === secondArray[b]) {
-        commonNumbers.push(secondArray[b]);
-        break;
-      }
-    }
-  }
-  return commonNumbers;
+const getGcd = (x, y) => {
+  if (y > x) return getGcd(y, x);
+  if (!y) return x;
+  return getGcd(y, x % y);
 };
 
 const getQuestionAndAnswer = () => {
   const pair = cons(getRandomNumber(20), getRandomNumber(20));
   const question = `${car(pair)} ${cdr(pair)}`;
-  const firstDividers = getDividers(car(pair));
-  const secondDividers = getDividers(cdr(pair));
-  const commonDividers = getCommonNumbers(firstDividers, secondDividers);
-  const maxDivider = commonDividers[commonDividers.length - 1];
-  const correctAnswer = String(maxDivider);
+  const correctAnswer = String(getGcd(car(pair), cdr(pair)));
   return [question, correctAnswer];
 };
 
