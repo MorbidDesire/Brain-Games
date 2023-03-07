@@ -13,6 +13,7 @@ git clone git@github.com:MorbidDesire/frontend-project-44.git
 
 ```bash
 make install
+npm link
 ```
 
 ## Run Brain-Even
