@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { cons, car, cdr } from '@hexlet/pairs';
 import customGame from '../index.js';
 import getRandomNumber from '../customs.js';

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import getRandomNumber from '../customs.js';
 import customGame from '../index.js';
 
